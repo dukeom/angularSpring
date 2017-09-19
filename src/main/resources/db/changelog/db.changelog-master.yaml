@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: sa
+      changes:
+        - createTable:
+            tableName: user
+            columns:
+              - column:
+                  name: user_id
+                  type: varchar(20)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+  - loadData:
+      encoding: UTF-8
+      file: db/user.csv
+      separator: ;
+      tableName: user
