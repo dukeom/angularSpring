@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>사용자 관리</h2><p><button type="button" class="btn btn-primary" (click)="addForm()">추가</button></p>
+  <p>사용자를 조회, 수정, 생성, 삭제할 수 있습니다.</p>
+  <div *ngIf="showForm">
+    <div class="row">
+      <div class="col-sm-3">
+          <label for="userid">사용자ID</label> 
+          <input type="text" class="form-control" name="userid" style="width:200px" [(ngModel)]="user.userId">
+      </div>
+      <div class="col-sm-3">
+        <label for="password">패스워드</label> 
+        <input type="text" class="form-control" name="password" style="width:200px" [(ngModel)]="user.password">
+      </div>
+      <div class="col-sm-3">
+        <label for="name">이름</label>  
+        <input type="text" class="form-control" name="name" style="width:200px" [(ngModel)]="user.name">
+      </div>
+      <div class="col-sm-3">
+        <button type="button" class="btn btn-default btn-lg" (click)="cancel()">취소</button>
+        <button type="button" class="btn btn-default btn-lg" (click)="save()">저장</button>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>사용자ID</th>
+        <th>비밀번호</th>
+        <th>이름</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngIf="users">
+      <tr *ngFor="let user of users">
+        <td>{{user.userId}}</td>
+        <td>{{user.password}}</td>
+        <td>{{user.name}}</td>
+        <td>
+          <button type="button" class="btn btn-danger" (click)="delete(user.userId)">삭제</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
