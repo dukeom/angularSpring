@@ -1,5 +1,10 @@
 # AngularSpring
 
+이 프로젝트는 Angular와 SpringBoot의 RestAPI를 이용하여 사용자 조회,입력,삭제를 처리하는 간단한 샘플입니다.
+Angular와 Spring Boot 조합으로 처음 개발할때 참고하시기 바랍니다.
+
+Doc 폴더에 강의용 pdf와 최종 실행 동영상이 있으니 참고하세요. 
+ 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
 
 ## Development server
